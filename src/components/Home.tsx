@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { Helmet } from "react-helmet";
 import Sentiment from "./Sentiment";
 import { Sentiment as SentimentType, Message } from "../types";
 
@@ -59,22 +60,27 @@ const Home = () => {
   };
 
   return (
-    <article>
-      <h1>Home</h1>
-      <StyledForm onSubmit={sendMessage}>
-        <label htmlFor="search_query">Say something:</label>
-        <StyledInput
-          name="search_query"
-          type="text"
-          autoComplete="off"
-          value={query}
-          onChange={handleInputChange}
-        />
-        <StyledButton type="submit">Send</StyledButton>
-      </StyledForm>
-      <code>{JSON.stringify(sentiment)}</code>
-      {sentiment && <Sentiment {...sentiment} />}
-    </article>
+    <>
+      <Helmet>
+        <title>Home</title>
+      </Helmet>
+      <article>
+        <h1>Home</h1>
+        <StyledForm onSubmit={sendMessage}>
+          <label htmlFor="search_query">Say something:</label>
+          <StyledInput
+            name="search_query"
+            type="text"
+            autoComplete="off"
+            value={query}
+            onChange={handleInputChange}
+          />
+          <StyledButton type="submit">Send</StyledButton>
+        </StyledForm>
+        <code>{JSON.stringify(sentiment)}</code>
+        {sentiment && <Sentiment {...sentiment} />}
+      </article>
+    </>
   );
 };
 

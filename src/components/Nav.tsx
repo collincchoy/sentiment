@@ -7,8 +7,14 @@ const StyledNav = styled.nav`
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
-  background: rgb(7, 27, 25);
+  background: rgb(17, 84, 76);
   color: white;
+
+  a {
+    color: inherit;
+    text-align: right;
+    text-decoration: none;
+  }
 `;
 
 const StyledNavLinks = styled.ul`
@@ -17,11 +23,6 @@ const StyledNavLinks = styled.ul`
   justify-content: flex-end;
   align-items: center;
   list-style-type: none;
-
-  a {
-    color: white;
-    text-align: right;
-  }
 `;
 
 const Nav: React.FC = () => {
@@ -29,7 +30,7 @@ const Nav: React.FC = () => {
     <div>
       <StyledNav>
         <Link to="/">
-          <h3>Logo</h3>
+          <h3>Sensitive Tim</h3>
         </Link>
         <StyledNavLinks>
           <li>

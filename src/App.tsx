@@ -1,9 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Helmet } from "react-helmet";
+
 import Nav from "./components/Nav";
 import About from "./components/About";
 import Home from "./components/Home";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const StyledApp = styled.div`
   text-align: center;
@@ -12,6 +15,10 @@ const StyledApp = styled.div`
 function App() {
   return (
     <Router>
+      <Helmet
+        defaultTitle="Sensitive Tim"
+        titleTemplate="Sensitive Time - %s"
+      />
       <StyledApp>
         <Nav />
         <Switch>
