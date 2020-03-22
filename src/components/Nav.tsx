@@ -23,6 +23,10 @@ const StyledNavLinks = styled.ul`
   justify-content: flex-end;
   align-items: center;
   list-style-type: none;
+
+  a:hover {
+    color: hsl(0, 0%, 75%);
+  }
 `;
 
 const Nav: React.FC = () => {

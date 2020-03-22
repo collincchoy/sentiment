@@ -10,6 +10,13 @@ import Home from "./components/Home";
 
 const StyledApp = styled.div`
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
+
+const PageContainer = styled.div`
+  flex: 1;
 `;
 
 function App() {
@@ -21,10 +28,12 @@ function App() {
       />
       <StyledApp>
         <Nav />
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/about" component={About} />
-        </Switch>
+        <PageContainer>
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/about" component={About} />
+          </Switch>
+        </PageContainer>
       </StyledApp>
     </Router>
   );
