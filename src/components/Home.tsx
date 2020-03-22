@@ -1,17 +1,34 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 import Sentiment from "./Sentiment";
 import { Sentiment as SentimentType, Message } from "../types";
 
-// const debounce = (f, ms) => {
-//   let ref;
-//   return (...args) => {
-//     if (ref) {
-//       clearTimeout(ref);
-//     } else {
-//       ref = setTimeout(() => f(...args), ms);
-//     }
-//   };
-// };
+const StyledForm = styled.form`
+  margin-top: 15px;
+  margin-bottom: 15px;
+`;
+
+const StyledInput = styled.input`
+  padding: 0.5rem;
+  border-radius: 2px;
+  border-color: darkblue;
+  font-size: 16px;
+  margin-left: 15px;
+`;
+
+const StyledButton = styled.button`
+  padding: 10px;
+  border-radius: 5px;
+  background-color: aquamarine;
+  border: none;
+  width: auto;
+  height: 100%;
+
+  &:hover {
+    background-color: #5cb597;
+    cursor: pointer;
+  }
+`;
 
 const Home = () => {
   const [query, setQuery] = useState("");
@@ -37,26 +54,26 @@ const Home = () => {
 
   const sendMessage: React.FormEventHandler = e => {
     e.preventDefault();
-    predict(query);
+    query && predict(query);
   };
 
   return (
-    <>
+    <article>
       <h1>Home</h1>
-      <form onSubmit={sendMessage}>
+      <StyledForm onSubmit={sendMessage}>
         <label htmlFor="search_query">Say something:</label>
-        <input
+        <StyledInput
           name="search_query"
           type="text"
           autoComplete="off"
           value={query}
           onChange={handleInputChange}
         />
-        <button type="submit">Send</button>
-      </form>
+        <StyledButton type="submit">Send</StyledButton>
+      </StyledForm>
       <code>{JSON.stringify(sentiment)}</code>
       {sentiment && <Sentiment {...sentiment} />}
-    </>
+    </article>
   );
 };
 
