@@ -14,12 +14,13 @@ const StyledNav = styled.nav`
 const StyledNavLinks = styled.ul`
   width: 50%;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
   align-items: center;
   list-style-type: none;
 
   a {
     color: white;
+    text-align: right;
   }
 `;
 
@@ -33,9 +34,6 @@ const Nav: React.FC = () => {
         <StyledNavLinks>
           <li>
             <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/shop">Shop</Link>
           </li>
         </StyledNavLinks>
       </StyledNav>
