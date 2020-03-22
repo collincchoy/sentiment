@@ -1,0 +1,8 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Positive">
+<circle id="Head" cx="200" cy="200" r="200" fill="#FBF564"/>
+<ellipse id="Eye-right" cx="260" cy="138.5" rx="19" ry="33.5" fill="#292929"/>
+<ellipse id="Eye-left" cx="140" cy="138.5" rx="19" ry="33.5" fill="#292929"/>
+<path id="Mouth" d="M100 267C199.007 302.549 199.513 302.663 300 267" stroke="black" stroke-width="5" stroke-linecap="round"/>
+</g>
+</svg>
