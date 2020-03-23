@@ -4,6 +4,10 @@ import { Helmet } from "react-helmet";
 import Sentiment from "./Sentiment";
 import { Sentiment as SentimentType, Message } from "../types";
 
+const Wrapper = styled.article`
+  margin: auto;
+`;
+
 const StyledForm = styled.form`
   margin-top: 15px;
   margin-bottom: 15px;
@@ -64,8 +68,7 @@ const Home = () => {
       <Helmet>
         <title>Home</title>
       </Helmet>
-      <article>
-        <h1>Home</h1>
+      <Wrapper>
         <StyledForm onSubmit={sendMessage}>
           <label htmlFor="search_query">Say something:</label>
           <StyledInput
@@ -73,13 +76,14 @@ const Home = () => {
             type="text"
             autoComplete="off"
             value={query}
+            placeholder="I like dogs."
             onChange={handleInputChange}
           />
           <StyledButton type="submit">Send</StyledButton>
         </StyledForm>
         <code>{JSON.stringify(sentiment)}</code>
         {sentiment && <Sentiment {...sentiment} />}
-      </article>
+      </Wrapper>
     </>
   );
 };
